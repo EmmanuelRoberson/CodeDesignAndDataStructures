@@ -50,3 +50,4 @@ inline bool listIterator<Type>::operator!=(const listIterator<Type>&) const
 {
 	return false;
 }
+//here(delete if returning)
