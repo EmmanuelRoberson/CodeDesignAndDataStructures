@@ -115,7 +115,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="LinkedListBase.h" />
     <ClInclude Include="LinkedListIterator.h" />
+    <ClInclude Include="ListDeletingAndDestroying.h" />
+    <ClInclude Include="ListInsertingAndSearching.h" />
     <ClInclude Include="Node.h" />
   </ItemGroup>
   <ItemGroup>

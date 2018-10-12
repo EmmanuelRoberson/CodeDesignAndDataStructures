@@ -12,7 +12,7 @@ public:
 	bool operator == (const listIterator<Type>&) const;
 	bool operator != (const listIterator<Type>&) const;
 private:
-	nodeType<Type> * current;
+	nodeType<Type>* current;
 };
 
 template<typename Type>
@@ -22,9 +22,9 @@ inline listIterator<Type>::listIterator()
 }
 
 template<typename Type>
-inline listIterator<Type>::listIterator(nodeType<Type>)
+listIterator<Type>::listIterator(nodeType<Type> ex)
 {
-	current = &nodeType<Type>;
+	current = &ex;
 }
 
 template<typename Type>
@@ -40,14 +40,13 @@ listIterator<Type> listIterator<Type>::operator++()
 }
 
 template<typename Type>
-bool listIterator<Type>::operator==(const listIterator<Type>&) const
+bool listIterator<Type>::operator==(const listIterator<Type>& it) const
 {
-	return (current == listIterator<Type>->current);
+	return (current == it.current);
 }
 
 template<typename Type>
-inline bool listIterator<Type>::operator!=(const listIterator<Type>&) const
+bool listIterator<Type>::operator!=(const listIterator<Type>& it) const
 {
-	return false;
+	return (current != it.current);
 }
-//here(delete if returning)
