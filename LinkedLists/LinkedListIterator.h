@@ -6,7 +6,7 @@ class listIterator
 {
 public:
 	listIterator();
-	listIterator(nodeType<Type>);
+	listIterator(nodeType<Type>*);
 	Type operator * ();
 	listIterator<Type> operator ++ ();
 	bool operator == (const listIterator<Type>&) const;
@@ -22,27 +22,29 @@ inline listIterator<Type>::listIterator()
 }
 
 template<typename Type>
-listIterator<Type>::listIterator(nodeType<Type> ex)
+listIterator<Type>::listIterator(nodeType<Type>* ex)
 {
-	current = &ex;
+	current = ex;
 }
 
 template<typename Type>
 Type listIterator<Type>::operator*()
 {
-	return current->info;
+	return this->current->info;
 }
 
 template<typename Type>
 listIterator<Type> listIterator<Type>::operator++()
 {
-	current = current->nextLink;
+	//pre-increment
+	this->current = this->current->nextLink;
+	return *this;
 }
 
 template<typename Type>
 bool listIterator<Type>::operator==(const listIterator<Type>& it) const
 {
-	return (current == it.current);
+	return (this->current->info == *it);
 }
 
 template<typename Type>

@@ -24,10 +24,7 @@
     <ClInclude Include="LinkedListBase.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ListInsertingAndSearching.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ListDeletingAndDestroying.h">
+    <ClInclude Include="LinkedListExtended.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
