@@ -12,9 +12,11 @@ int main()
 	node4->info = 49;
 	
 	linkedListExtended<int>* testList = new linkedListExtended<int>();
-	testList->insertFirst(node1->info);
+	testList->insertFirst(node1->info); //inserting first and last works
 	testList->insertFirst(node2->info);
 	testList->insertLast(node3->info);
 	testList->insertLast(node4->info);
-	testList->deleteNode(node4->info);
+	testList->isEmptyList(); //expected: false :: test : false
+	testList->search(5); //expected: true :: test: true
+	testList->deleteNode(node4->info); //deleting works
 }

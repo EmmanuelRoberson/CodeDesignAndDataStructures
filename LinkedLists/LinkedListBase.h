@@ -37,12 +37,17 @@ void linkedListBase<Type>::initializeList()
 template<typename Type>
 bool linkedListBase<Type>::isEmptyList() const
 {
-	return false;
+	return (count == 0);
 }
 
 template<typename Type>
 void linkedListBase<Type>::print() const
 {
+	listIterator<Type>* iter = new listIterator<Type>(first);
+	for (int i = 0; i < count; i++)
+	{
+		std::cout << iter->
+	}
 }
 
 template<typename Type>

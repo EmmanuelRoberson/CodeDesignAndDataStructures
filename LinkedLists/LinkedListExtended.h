@@ -18,9 +18,7 @@ bool linkedListExtended<T>::search(const T& t) const
 	for (int i = 0; i < this->count; i++)
 	{
 		if (type->info == t)
-		{
 			return true;
-		}
 	}
 	return false;
 }
@@ -58,6 +56,10 @@ void linkedListExtended<T>::deleteNode(const T& t)
 template<class T>
 void linkedListExtended<T>::insertFirst(const T& t)
 {
+	if (this->count == 2)
+	{
+		this->first->nextLink = this->last;
+	}
 	nodeType<T>* node = new nodeType<T>;
 	node->info = t;
 	this->count++;
@@ -75,16 +77,15 @@ void linkedListExtended<T>::insertFirst(const T& t)
 		node->nextLink = this->first;
 		this->first = node;
 	}
-
-	if (this->count == 2)
-	{
-		this->first->nextLink = this->last;
-	}
 }
 
 template <class T>
 void linkedListExtended<T>::insertLast(const T& t)
 {
+	if (this->count == 2)
+	{
+		this->first->nextLink = this->last;
+	}
 	nodeType<T>* node = new nodeType<T>;
 	node->info = t;
 	this->count++;
@@ -103,8 +104,4 @@ void linkedListExtended<T>::insertLast(const T& t)
 		this->last = node;
 	}
 
-	if (this->count == 2)
-	{
-		this->first->nextLink = this->last;
-	}
 }
