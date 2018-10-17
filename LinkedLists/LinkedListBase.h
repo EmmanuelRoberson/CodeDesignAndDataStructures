@@ -19,7 +19,7 @@ public:
 	listIterator<Type> begin();
 	listIterator<Type> end();
 	linkedListBase();
-	linkedListBase(const listIterator<Type>&);
+	linkedListBase(const linkedListBase<Type>&);
 	~linkedListBase();
 protected:
 	int count;
@@ -43,46 +43,61 @@ bool linkedListBase<Type>::isEmptyList() const
 template<typename Type>
 void linkedListBase<Type>::print() const
 {
-	listIterator<Type>* iter = new listIterator<Type>(first);
+	if (isEmptyList() == true)
+	{
+		std::cout << "EMPTY LIST" << std::endl;
+		return;
+	}
+
+	nodeType<Type>* iter = first;
 	for (int i = 0; i < count; i++)
 	{
-		std::cout << iter->
+		std::cout << iter->info << " ";
+		iter = iter->nextLink;
 	}
+	std::cout << std::endl;
 }
 
 template<typename Type>
 int linkedListBase<Type>::length() const
 {
-	return 0;
+	return count;
 }
 
 template<typename Type>
 void linkedListBase<Type>::destroyList()
 {
+	if (isEmptyList() == false)
+	{//dont use cound in condition, because deleteNode() affects count
+		for (int i = 0, j = count; i < j; i++)
+			deleteNode(first->info);
+	}
 }
 
 template<typename Type>
 Type linkedListBase<Type>::front() const
-{
-	return Type();
+{//returns info of node that first is pointing to
+	return first->info;
 }
 
 template<typename Type>
 Type linkedListBase<Type>::back() const
-{
-	return Type();
+{//returns info of node that last is pointing to
+	return last->info;
 }
 
 template<typename Type>
 listIterator<Type> linkedListBase<Type>::begin()
 {
-	return listIterator<Type>();
+	listIterator<Type> iter(first);
+	return iter;
 }
 
 template<typename Type>
 listIterator<Type> linkedListBase<Type>::end()
 {
-	return listIterator<Type>();
+	listIterator<Type> iter(last);
+	return iter;
 }
 
 template<typename Type>
@@ -92,11 +107,15 @@ linkedListBase<Type>::linkedListBase()
 }
 
 template<typename Type>
-linkedListBase<Type>::linkedListBase(const listIterator<Type>&)
+linkedListBase<Type>::linkedListBase(const linkedListBase<Type>& other)
 {
+	first = other.first;
+	last = other.last;
+	count = other.count;
 }
 
 template<typename Type>
 linkedListBase<Type>::~linkedListBase()
 {
+	initializeList();
 }

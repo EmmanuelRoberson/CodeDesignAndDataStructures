@@ -26,30 +26,36 @@ bool linkedListExtended<T>::search(const T& t) const
 template <class T>
 void linkedListExtended<T>::deleteNode(const T& t)
 {
-	nodeType<T>* deleter = this->first, *trail = this->first;
-	if (t == this->first->info)
+	if (this->isEmptyList() == false)
 	{
-		this->first = this->first->nextLink;
-		delete deleter;
-	}
-	else if (t == this->last->info)
-	{
-		for (int i = 0; i < this->count - 2; i++)
+		nodeType<T>* deleter = this->first, *trail = this->first;
+		if (t == this->first->info)
+		{
+			this->first = this->first->nextLink;
+			delete deleter;
+			this->count--;
+		}
+		else if (t == this->last->info)
+		{
+			for (int i = 0; i < this->count - 2; i++)
+				deleter = deleter->nextLink;
+			this->last = deleter;
 			deleter = deleter->nextLink;
-		this->last = deleter;
-		deleter = deleter->nextLink;
-		delete deleter;
-	}
-	else
-	{
-		deleter = deleter->nextLink;
-		while (deleter->info != t)
+			delete deleter;
+			this->count--;
+		}
+		else
 		{
 			deleter = deleter->nextLink;
-			trail = trail->nextLink;
+			while (deleter->info != t)
+			{
+				deleter = deleter->nextLink;
+				trail = trail->nextLink;
+			}
+			trail->nextLink = deleter->nextLink;
+			delete deleter;
+			this->count--;
 		}
-		trail->nextLink = deleter->nextLink;
-		delete deleter;
 	}
 }
 
@@ -103,5 +109,4 @@ void linkedListExtended<T>::insertLast(const T& t)
 		this->last->nextLink = node;
 		this->last = node;
 	}
-
 }
