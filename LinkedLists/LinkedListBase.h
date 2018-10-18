@@ -26,6 +26,7 @@ protected:
 	nodeType<Type>* first;
 	nodeType<Type>* last;
 private:
+	void copyList(const linkedListBase<Type>&);
 };
 
 template<typename Type>
@@ -109,13 +110,23 @@ linkedListBase<Type>::linkedListBase()
 template<typename Type>
 linkedListBase<Type>::linkedListBase(const linkedListBase<Type>& other)
 {
-	first = other.first;
-	last = other.last;
-	count = other.count;
+	initializeList();
+	copyList(other);
 }
 
 template<typename Type>
 linkedListBase<Type>::~linkedListBase()
 {
 	initializeList();
+}
+
+template<typename Type>
+void linkedListBase<Type>::copyList(const linkedListBase<Type>& other)
+{
+	nodeType<Type>* temp = first;
+	while (temp != nullptr)
+	{
+		other.insertLast(temp->info);
+		temp = temp->nextLink;
+	}
 }
