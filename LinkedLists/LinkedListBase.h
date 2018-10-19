@@ -33,8 +33,7 @@ private:
 template<typename Type>
 const linkedListBase<Type>& linkedListBase<Type>::operator=(const linkedListBase<Type>& other)
 {
-	other.first = first;
-	other.last = last;
+	other->copyList(this);
 }
 
 template<typename Type>
@@ -131,10 +130,11 @@ linkedListBase<Type>::~linkedListBase()
 template<typename Type>
 void linkedListBase<Type>::copyList(const linkedListBase<Type>& other)
 {
-	nodeType<Type>* temp = first;
+	destroyList();
+	nodeType<Type>* temp = other.first;
 	while (temp != nullptr)
 	{
-		other.insertLast(temp->info);
+		insertLast(temp->info);
 		temp = temp->nextLink;
 	}
 }

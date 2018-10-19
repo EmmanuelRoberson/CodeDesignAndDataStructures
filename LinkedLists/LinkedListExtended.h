@@ -109,4 +109,5 @@ void linkedListExtended<T>::insertLast(const T& t)
 		this->last->nextLink = node;
 		this->last = node;
 	}
+	this->last->nextLink = nullptr;
 }
