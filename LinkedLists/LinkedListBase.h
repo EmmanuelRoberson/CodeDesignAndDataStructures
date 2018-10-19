@@ -5,6 +5,7 @@ template <typename Type>
 class linkedListBase
 {
 public:
+	const linkedListBase<Type>& operator = (const linkedListBase<Type>&);
 	void initializeList();
 	bool isEmptyList() const;
 	void print() const;
@@ -28,6 +29,13 @@ protected:
 private:
 	void copyList(const linkedListBase<Type>&);
 };
+
+template<typename Type>
+const linkedListBase<Type>& linkedListBase<Type>::operator=(const linkedListBase<Type>& other)
+{
+	other.first = first;
+	other.last = last;
+}
 
 template<typename Type>
 void linkedListBase<Type>::initializeList()
