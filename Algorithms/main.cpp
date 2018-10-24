@@ -17,25 +17,32 @@ nodeType<T> LowestHealth(linkedListExtended<T>* list)
 template <class T>
 nodeType<T> BubbleSort(linkedListWithInsertNode<T> * list)
 {
+	//keeps track of the lowest values
 	listIterator<T> temp1 = list->begin(), temp2 = list->begin();
-	++temp2;
 
 	for (int i = 0; i < list->length(); i++)
 	{
-		for (int j = i; j < list->length(); j++)
+		for (int j = i; j <= list->length(); j++)
 		{
 			if (*temp2 < *temp1)
 			{
+				//moves value
 				T tempVar = *temp2;
-				list->deleteNode(tempVar);
+				list->deleteNode(*temp2);
 				list->insertBefore(*temp1, tempVar);
-				while (temp2 != temp1)
-					++temp2;
+				//resets the loop, and moves iterators to the beginning
+				temp1 = list->begin();
+				for (int k = 0; k < i; i++)
+					++temp1;
+				j = i;
 				continue;
 			}
 			++temp2;
 		}
+		++temp1;
 	}
+	nodeType<T> node = { list->front() };
+	return node;
 }
 
 int main()
@@ -52,10 +59,9 @@ int main()
 		players->insertFirst(player5->info);
 		players->insertFirst(player2->info);
 		players->insertFirst(player4->info);
-		players->insertFirst(player1->info);
+		players->insertLast(player1->info);
 
-		LowestHealth(players);
+		//LowestHealth(players);
 
 		BubbleSort<int>(players);
-
 }
