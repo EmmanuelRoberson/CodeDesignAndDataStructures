@@ -10,7 +10,6 @@ int main()
 	//LINK LIST BASE FUNCTIONS
 
 	linkedListExtended<int>* testList = new linkedListExtended<int>();
-	linkedListExtended<int> begin;
 
 	//expected:: true is returned
 	testList->isEmptyList();

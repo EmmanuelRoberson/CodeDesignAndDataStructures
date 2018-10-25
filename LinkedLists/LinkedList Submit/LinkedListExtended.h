@@ -5,10 +5,10 @@ template <class T>
 class linkedListExtended : public linkedListBase<T>
 {
 public:
-	bool search(const T&) const override;
-	void insertFirst(const T&) override;
-	void insertLast(const T&) override;
-	void deleteNode(const T&) override;
+	bool search(const T&) const override;//
+	void insertFirst(const T&) override;//
+	void insertLast(const T&) override;//
+	void deleteNode(const T&) override;//
 };
 
 template<class T>
@@ -26,11 +26,9 @@ bool linkedListExtended<T>::search(const T& t) const
 template <class T>
 void linkedListExtended<T>::deleteNode(const T& t)
 {
-	//do this if the list isnt empty
 	if (this->isEmptyList() == false)
 	{
 		nodeType<T>* deleter = this->first, *trail = this->first;
-		//checks to see if the first or last node has the value of the argument
 		if (t == this->first->info)
 		{
 			this->first = this->first->nextLink;
@@ -48,7 +46,6 @@ void linkedListExtended<T>::deleteNode(const T& t)
 		}
 		else
 		{
-			//moves deleter ahead of trail
 			deleter = deleter->nextLink;
 			while (deleter->info != t)
 			{
@@ -65,7 +62,6 @@ void linkedListExtended<T>::deleteNode(const T& t)
 template<class T>
 void linkedListExtended<T>::insertFirst(const T& t)
 {
-	//if there are two nodes in the list, then it connects the first to the last
 	if (this->count == 2)
 	{
 		this->first->nextLink = this->last;
@@ -92,7 +88,6 @@ void linkedListExtended<T>::insertFirst(const T& t)
 template <class T>
 void linkedListExtended<T>::insertLast(const T& t)
 {
-	//if there are two nodes in the list, then it connects the first to the last
 	if (this->count == 2)
 	{
 		this->first->nextLink = this->last;
