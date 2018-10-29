@@ -80,7 +80,7 @@ void linkedListBase<Type>::destroyList()
 	if (isEmptyList() == false)
 	{
 		//dont use count in condition, because deleteNode() affects count
-		for (int i = 0 j = count; i < j; i++)
+		for (int i = 0, j = count; i < j; i++)
 			deleteNode(first->info);
 	}
 	initializeList();

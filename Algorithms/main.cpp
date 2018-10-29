@@ -22,7 +22,7 @@ nodeType<T> BubbleSort(linkedListWithInsertNode<T> * list)
 
 	for (int i = 0; i < list->length(); i++)
 	{
-		for (int j = i; j <= list->length(); j++)
+		for (int j = i; j < list->length(); j++)
 		{
 			if (*temp2 < *temp1)
 			{
@@ -32,7 +32,7 @@ nodeType<T> BubbleSort(linkedListWithInsertNode<T> * list)
 				list->insertBefore(*temp1, tempVar);
 				//resets the loop, and moves iterators to the beginning
 				temp1 = list->begin();
-				for (int k = 0; k < i; i++)
+				for (int k = 0; k < i; k++)
 					++temp1;
 				j = i;
 				continue;
@@ -40,6 +40,7 @@ nodeType<T> BubbleSort(linkedListWithInsertNode<T> * list)
 			++temp2;
 		}
 		++temp1;
+		temp2 = temp1;
 	}
 	nodeType<T> node = { list->front() };
 	return node;
@@ -55,11 +56,11 @@ int main()
 		nodeType<int>* player5 = new nodeType<int>{ 50 };
 
 		linkedListWithInsertNode<int>* players = new linkedListWithInsertNode<int>();
-		players->insertFirst(player3->info);
-		players->insertFirst(player5->info);
-		players->insertFirst(player2->info);
-		players->insertFirst(player4->info);
 		players->insertLast(player1->info);
+		players->insertLast(player4->info);
+		players->insertLast(player3->info);
+		players->insertLast(player2->info);
+		players->insertLast(player5->info);
 
 		//LowestHealth(players);
 
