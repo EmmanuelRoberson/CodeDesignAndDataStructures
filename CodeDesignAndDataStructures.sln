@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Algorithms", "Algorithms\Al
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Hashing", "Hashing\Hashing.vcxproj", "{B1193929-3D07-48A2-9CFC-524675D95FA0}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DynamicArray", "DynamicArray\DynamicArray.vcxproj", "{B6246EAE-29D4-4322-8C3F-BBEA4B284CC6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -41,6 +43,14 @@ Global
 		{B1193929-3D07-48A2-9CFC-524675D95FA0}.Release|x64.Build.0 = Release|x64
 		{B1193929-3D07-48A2-9CFC-524675D95FA0}.Release|x86.ActiveCfg = Release|Win32
 		{B1193929-3D07-48A2-9CFC-524675D95FA0}.Release|x86.Build.0 = Release|Win32
+		{B6246EAE-29D4-4322-8C3F-BBEA4B284CC6}.Debug|x64.ActiveCfg = Debug|x64
+		{B6246EAE-29D4-4322-8C3F-BBEA4B284CC6}.Debug|x64.Build.0 = Debug|x64
+		{B6246EAE-29D4-4322-8C3F-BBEA4B284CC6}.Debug|x86.ActiveCfg = Debug|Win32
+		{B6246EAE-29D4-4322-8C3F-BBEA4B284CC6}.Debug|x86.Build.0 = Debug|Win32
+		{B6246EAE-29D4-4322-8C3F-BBEA4B284CC6}.Release|x64.ActiveCfg = Release|x64
+		{B6246EAE-29D4-4322-8C3F-BBEA4B284CC6}.Release|x64.Build.0 = Release|x64
+		{B6246EAE-29D4-4322-8C3F-BBEA4B284CC6}.Release|x86.ActiveCfg = Release|Win32
+		{B6246EAE-29D4-4322-8C3F-BBEA4B284CC6}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

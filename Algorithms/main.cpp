@@ -1,68 +1,27 @@
-#include "LinkListWithInsertAtNode.h"
+#include <iostream>
 
-template <class T>
-nodeType<T> LowestHealth(linkedListExtended<T>* list)
+//bubble sort from least to greatest
+template <class Type>
+void BubbleSort(Type arr[], int length)
 {
-	listIterator<T> temp = list->begin();
-	nodeType<T> lowest = { *temp };
-	for (int i = 0; i < list->length(); i++)
+	for (int i = 0; i < length; i++)
 	{
-		if (*temp < lowest.info)
-			lowest.info = *temp;
-		++temp;
-	}
-	return lowest;
-}
-
-template <class T>
-nodeType<T> BubbleSort(linkedListWithInsertNode<T> * list)
-{
-	//keeps track of the lowest values
-	listIterator<T> temp1 = list->begin(), temp2 = list->begin();
-
-	for (int i = 0; i < list->length(); i++)
-	{
-		for (int j = i; j < list->length(); j++)
+		for (int j = i; j < length; j++)
 		{
-			if (*temp2 < *temp1)
+			if (arr[i] > arr[j])
 			{
-				//moves value
-				T tempVar = *temp2;
-				list->deleteNode(*temp2);
-				list->insertBefore(*temp1, tempVar);
-				//resets the loop, and moves iterators to the beginning
-				temp1 = list->begin();
-				for (int k = 0; k < i; k++)
-					++temp1;
-				j = i;
-				continue;
+				Type temp = arr[i];
+				arr[i] = arr[j];
+				arr[j] = temp;
 			}
-			++temp2;
 		}
-		++temp1;
-		temp2 = temp1;
 	}
-	nodeType<T> node = { list->front() };
-	return node;
 }
 
 int main()
 {
-	//returning lowest health using lists (not bubble sort)
-		nodeType<int>* player1 = new nodeType<int>{ 10 };
-		nodeType<int>* player2 = new nodeType<int>{ 20 };
-		nodeType<int>* player3 = new nodeType<int>{ 30 };
-		nodeType<int>* player4 = new nodeType<int>{ 40 };
-		nodeType<int>* player5 = new nodeType<int>{ 50 };
+	int testArray[10] = { 4, 52, 3, 5, 6, 63, 62, 19, 23, 55 };
 
-		linkedListWithInsertNode<int>* players = new linkedListWithInsertNode<int>();
-		players->insertLast(player1->info);
-		players->insertLast(player4->info);
-		players->insertLast(player3->info);
-		players->insertLast(player2->info);
-		players->insertLast(player5->info);
+	BubbleSort<int>(testArray, 10);
 
-		//LowestHealth(players);
-
-		BubbleSort<int>(players);
 }
