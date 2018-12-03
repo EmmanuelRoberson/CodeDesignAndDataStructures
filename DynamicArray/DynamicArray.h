@@ -7,9 +7,11 @@ public:
 	
 	DynamicArray();
 
-	void Insert(Type&);
+	void InsertLast(Type&);
 
 	void Delete(Type&);
+
+	Type GetData(int);
 
 private:
 
@@ -29,7 +31,7 @@ DynamicArray<Type>::DynamicArray()
 }
 
 template<class Type>
-void DynamicArray<Type>::Insert(Type & new_data)
+void DynamicArray<Type>::InsertLast(Type & new_data)
 {
 	if (filled_indexes == total_length)
 	{
@@ -69,4 +71,10 @@ void DynamicArray<Type>::Delete(Type & deleted_data)
 	filled_indexes--;
 	delete data;
 	data = temp;
+}
+
+template<class Type>
+ Type DynamicArray<Type>::GetData(int index)
+{
+	 return data[index];
 }
