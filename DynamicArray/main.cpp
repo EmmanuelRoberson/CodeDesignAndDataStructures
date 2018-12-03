@@ -27,5 +27,15 @@ int main()
 	//result
 	//total be 8, indexes be 4
 
+	//expected
+	//temp will be assigned 1
 	int temp = test->GetData(2);
+	//result
+	//temp is assigned 1
+
+	//expected
+	//data in test wil be sorted from least to greatest
+	test->SortLeastToGreat();
+	//result
+	//data in test is sorted from least to greatest
 }
