@@ -13,6 +13,8 @@ public:
 
 	Type GetData(int);
 
+	void SortLeastToGreat();
+
 private:
 
 	Type* data;
@@ -77,4 +79,21 @@ template<class Type>
  Type DynamicArray<Type>::GetData(int index)
 {
 	 return data[index];
+}
+
+template <class Type>
+void DynamicArray<Type>::SortLeastToGreat()
+{
+	for (int i = 0; i < filled_indexes; i++)
+	{
+		for (int j = i; j < filled_indexes; j++)
+		{
+			if (data[i] > data[j])
+			{
+				Type temp = data[i];
+				data[i] = data[j];
+				data[j] = temp;
+			}
+		}
+	}
 }
