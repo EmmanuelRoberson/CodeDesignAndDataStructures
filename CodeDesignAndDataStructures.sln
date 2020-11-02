@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27703.2047
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29424.173
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LinkedLists", "LinkedLists\LinkedLists.vcxproj", "{EA9B1B4E-74F5-4DC2-9499-305386EEB636}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Hashing", "Hashing\Hashing.vcxproj", "{B1193929-3D07-48A2-9CFC-524675D95FA0}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DynamicArray", "DynamicArray\DynamicArray.vcxproj", "{B6246EAE-29D4-4322-8C3F-BBEA4B284CC6}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DataStructures", "DataStructures\DataStructures.vcxproj", "{B3152EBF-6B6E-4480-AB56-F2C0DDD3266C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,14 @@ Global
 		{B6246EAE-29D4-4322-8C3F-BBEA4B284CC6}.Release|x64.Build.0 = Release|x64
 		{B6246EAE-29D4-4322-8C3F-BBEA4B284CC6}.Release|x86.ActiveCfg = Release|Win32
 		{B6246EAE-29D4-4322-8C3F-BBEA4B284CC6}.Release|x86.Build.0 = Release|Win32
+		{B3152EBF-6B6E-4480-AB56-F2C0DDD3266C}.Debug|x64.ActiveCfg = Debug|x64
+		{B3152EBF-6B6E-4480-AB56-F2C0DDD3266C}.Debug|x64.Build.0 = Debug|x64
+		{B3152EBF-6B6E-4480-AB56-F2C0DDD3266C}.Debug|x86.ActiveCfg = Debug|Win32
+		{B3152EBF-6B6E-4480-AB56-F2C0DDD3266C}.Debug|x86.Build.0 = Debug|Win32
+		{B3152EBF-6B6E-4480-AB56-F2C0DDD3266C}.Release|x64.ActiveCfg = Release|x64
+		{B3152EBF-6B6E-4480-AB56-F2C0DDD3266C}.Release|x64.Build.0 = Release|x64
+		{B3152EBF-6B6E-4480-AB56-F2C0DDD3266C}.Release|x86.ActiveCfg = Release|Win32
+		{B3152EBF-6B6E-4480-AB56-F2C0DDD3266C}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
