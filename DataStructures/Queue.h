@@ -26,12 +26,11 @@ public:
 	//tells whether the object is equal to the current queue
 	bool Equals(Queue<T>);
 
-	//returns the object at the beginning of the queue before removing it
+	//returns the object at the beginning of the queue without removing it
 	T Peek();
-
-
-
 private:
+
+	int length;
 
 
 
@@ -39,3 +38,9 @@ private:
 protected:
 
 };
+
+template<class T>
+inline int Queue<T>::Length()
+{
+	return length;
+}
