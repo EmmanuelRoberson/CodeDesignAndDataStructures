@@ -1,4 +1,5 @@
 #pragma once
+#include "onewaynode.h"
 
 template <class T>
 class Queue
@@ -6,7 +7,7 @@ class Queue
 public:
 
 	//constructor
-	Queue();
+	Queue(T);
 
 	//returns length of queue
 	int Length();
@@ -32,15 +33,26 @@ private:
 
 	int length;
 
+	//start of the queue
+	OneWayNode<T>* m_Start;
 
-
+	//end of the queue
+	OneWayNode<T>* m_End;
 
 protected:
 
 };
 
 template<class T>
+inline Queue<T>::Queue(T data)
+{
+	m_Start = new OneWayNode<T>(){ this.data = data };
+}
+
+template<class T>
 inline int Queue<T>::Length()
 {
 	return length;
 }
+
+
