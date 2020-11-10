@@ -55,4 +55,17 @@ inline int Queue<T>::Length()
 	return length;
 }
 
+template<class T>
+inline bool Queue<T>::Contains(T pData)
+{
+	OneWayNode<T>* iterator = m_Start;
+
+	while (iterator != nullptr)
+	{
+		if (iterator->d)
+	}
+
+	return false;
+}
+
 
