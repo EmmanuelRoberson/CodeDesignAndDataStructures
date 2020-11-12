@@ -19,7 +19,7 @@ public:
 	bool Contains(T);
 
 	//copies the each data entry in the queue to an array starting from the specified index of the queue
-	void CopyTo(T[], int);
+	void CopyTo(T[], int, int);
 
 	//removes and returns the object at the beginning of the queue
 	T Dequeue();
@@ -110,12 +110,22 @@ inline bool Queue<T>::Contains(T aData)
 }
 
 template<class T>
-inline void Queue<T>::CopyTo(T aTargetArray[], int aIndex)
+inline void Queue<T>::CopyTo(T aTargetArray[], int aArraySize, int aQueueIndex)
 {
+	//returns if the array size is less zero below below
+	if (aArraySize <= 0)
+		return;
+
+	//returns if the queue is empty, or the queue index argument is greater then the length
+	if (Length <= 0 || aQueueIndex >= Length())
+	{
+		return;
+	}
+
 	OneWayNode<T>* pIterator = m_Start;
 
 	//iterates the pointer to the specified index in the queue
-	for (int i = 0; i < aIndex; i++)
+	for (int i = 0; i < aQueueIndex; i++)
 	{
 		pIterator = pIterator->nextNode;
 	}
@@ -132,6 +142,10 @@ inline void Queue<T>::CopyTo(T aTargetArray[], int aIndex)
 		pIterator = pIterator->nextNode;
 
 		arrayIndex++;
+
+		//returns so the index doesnt go past the array size
+		if (arrayIndex >= arraySize)
+			return;
 	}
 }
 
